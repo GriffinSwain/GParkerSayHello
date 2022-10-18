@@ -12,10 +12,12 @@ int talk = 0;
 int eyes = 0;
 int jaw = 0;
 int second =  0;
+int check;
+int digit = 0;
 string end = "o";
-string mouthClosed = "   :  -------  :  ";
+string mouthClosed = "   :  _______  :  ";
 string mouthSmile =  "   :  \\_____/  :   ";
-string mouthOpen =   "   :  ______   :";
+string mouthOpen =   "   :  _______  :";
 string eyesOpen =   ":(:  (O)   (O)  :):";
 string eyesClosed = ":(:  (_)   (_)  :):";
 string eyesWink =   ":(:  <0>   <_>~#:):";
@@ -23,6 +25,7 @@ string specialEyes =":(:  {0}   {0}  :):";
 string greetings = "Hello";
 string sentence = "I hope you have a good day today!";
 bool choice = false;
+bool number;
 Console.Clear();
 
 /*This is the beginning of the main body of the program
@@ -37,13 +40,24 @@ Console.WriteLine("Hello there!  ");
 Task.Delay(750).Wait();
 Console.WriteLine("Please give me your name so that I can properly greet you!");
 name = Console.ReadLine();
+/* for(int i = name.Length - 1; i >= 0; i--)
+{
+digit = name[i];
+number = Int32.TryParse(digit, out check);
+}
+number = Int32.TryParse(name, out check);
+if (number == true)
+{
+    Console.WriteLine($"You can't be named {check}! You're a human! Human names have letters!");
+}
+*/
 }
 while (talk <= 5)
 {
 Console.Clear();
 jaw = 1;
-/*This calls upon the Face method with a host of different variables attached.
-Because he want him to look like he's talking, we send the mouthOpen string*/
+/*This calls upon the Face method with a host of different variables attached to print the face.
+Because we want him to look like he's talking, we send the 'mouthOpen' string*/
 Face(mouthOpen, name, greetings, sentence, eyesOpen, jaw, second);
 Thread.Sleep(600);
 Console.Clear();
