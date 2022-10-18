@@ -7,13 +7,13 @@ string name = "";
 int loop = 1;
 int talk = 0;
 int eyes = 0;
+int jaw = 0;
 string end = "o";
 string mouthSmile = "   :  \\_____/  :   ";
-string mouthOpen =  "   :  <=====>  :";
-string mouthClose = "   :  -------  :";
+string mouthOpen =  "   :  _______  :";
 string eyesOpen =   ":(:  (O)   (O)  :):";
 string eyesClosed = ":(:  (_)   (_)  :):";
-string eyesWink =   ":(:  (0)   (0)  :):";
+string eyesWink =   ":(:  <0>   <0>  :):";
 string greetings = "Hello";
 string sentence = "I hope you have a good day today!";
 bool choice = false;
@@ -26,19 +26,22 @@ while (name.Length <= 0)
 Console.WriteLine("Hello there! Please give me your name so that I can properly greet you!");
 name = Console.ReadLine();
 }
-while (talk <= 4)
+while (talk <= 5)
 {
 Console.Clear();
-Face(mouthOpen, name, greetings, sentence, eyesOpen);
+jaw = 1;
+Face(mouthOpen, name, greetings, sentence, eyesOpen, jaw);
 Thread.Sleep(1000);
 Console.Clear();
-if (eyes % 2 == 1)
+if (eyes % 3 == 1)
 {
-    Face(mouthClose, name, greetings, sentence, eyesClosed);
+    jaw = 0;
+    Face(mouthSmile, name, greetings, sentence, eyesClosed, jaw);
 }
 else
 {
-    Face(mouthClose, name, greetings, sentence, eyesOpen);
+    jaw = 0;
+    Face(mouthSmile, name, greetings, sentence, eyesOpen, jaw);
 }
 Thread.Sleep(1000);
 talk++;
@@ -57,6 +60,7 @@ if (end == "yes" || end == "no"){
     choice = true;
     talk = 0;
     eyes = 0;
+    jaw = 0;
 }
 }
 
@@ -68,12 +72,12 @@ name = "";
 Console.Clear();
 }
 
-name = "";
-greetings = "Goodbye for now";
-sentence = "Thank you for letting me greet you! It's the reason I was created!";
-Face(mouthSmile, name, greetings, sentence, eyesWink);
+name = "for now";
+greetings = "Goodbye";
+sentence = "Thanks for letting me greet you! It's the reason I was created!";
+Face(mouthSmile, name, greetings, sentence, eyesWink, jaw);
 
-static void Face(string mouth, string name, string greetings, string sentence, string eyes)
+static void Face(string mouth, string name, string greetings, string sentence, string eyes, int jaw)
 {
     int open = 1;
 Console.WriteLine("      .......");
@@ -88,6 +92,10 @@ Console.WriteLine("'.:     / \\     :.'");
 Console.WriteLine(" ':    (. .)    :' ");
 Console.WriteLine($"  '.  .:::::.  .'        {greetings} {name}!");
 Console.WriteLine(mouth);
+if (jaw == 1)
+{
+Console.WriteLine("   :  \\_____/  :");
+}
 Console.WriteLine($"   '.  ~:::~  .' {sentence}");
 Console.WriteLine("     '.  '  .'     ");
 Console.WriteLine("       '''''");
