@@ -14,17 +14,21 @@ int jaw = 0;
 int second =  0;
 string end = "o";
 string mouthClosed = "   :  -------  :  ";
-string mouthSmile =  "   :  \\_____/ :   ";
+string mouthSmile =  "   :  \\_____/  :   ";
 string mouthOpen =   "   :  ______   :";
 string eyesOpen =   ":(:  (O)   (O)  :):";
 string eyesClosed = ":(:  (_)   (_)  :):";
 string eyesWink =   ":(:  <0>   <_>~#:):";
-string specialEyes =":(:  <0>   <0>  :):";
+string specialEyes =":(:  {0}   {0}  :):";
 string greetings = "Hello";
 string sentence = "I hope you have a good day today!";
 bool choice = false;
 Console.Clear();
 
+/*This is the beginning of the main body of the program
+It starts byy getting an input, then calling upon a method to draw a face
+with a while loop animating it to make it look like it's speaking.
+*/
 while (loop == 1)
 {
 while (name.Length <= 0)
@@ -38,6 +42,8 @@ while (talk <= 5)
 {
 Console.Clear();
 jaw = 1;
+/*This calls upon the Face method with a host of different variables attached.
+Because he want him to look like he's talking, we send the mouthOpen string*/
 Face(mouthOpen, name, greetings, sentence, eyesOpen, jaw, second);
 Thread.Sleep(600);
 Console.Clear();
