@@ -49,6 +49,7 @@ if (number == true)
     Console.WriteLine($"You can't be named {check}! You're a human! Human names have letters!");
 }
 }
+number = true;
 }
 while (talk <= 5)
 {
