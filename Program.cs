@@ -25,11 +25,11 @@ string specialEyes =":(:  {0}   {0}  :):";
 string greetings = "Hello";
 string sentence = "I hope you have a good day today!";
 bool choice = false;
-bool number;
+bool number = true;
 Console.Clear();
 
 /*This is the beginning of the main body of the program
-It starts byy getting an input, then calling upon a method to draw a face
+It starts by getting an input, then calling upon a method to draw a face
 with a while loop animating it to make it look like it's speaking.
 */
 while (loop == 1)
@@ -38,19 +38,17 @@ while (name.Length <= 0)
 { 
 Console.WriteLine("Hello there!  ");
 Task.Delay(750).Wait();
+while (number == true)
+{
 Console.WriteLine("Please give me your name so that I can properly greet you!");
 name = Console.ReadLine();
-/* for(int i = name.Length - 1; i >= 0; i--)
-{
-digit = name[i];
-number = Int32.TryParse(digit, out check);
-}
 number = Int32.TryParse(name, out check);
 if (number == true)
 {
+    Console.Clear();
     Console.WriteLine($"You can't be named {check}! You're a human! Human names have letters!");
 }
-*/
+}
 }
 while (talk <= 5)
 {
