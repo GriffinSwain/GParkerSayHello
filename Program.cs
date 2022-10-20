@@ -1,7 +1,8 @@
 ﻿//Griffin Parker
 //Mini Challenge 1 Remastered - Say Hello
 //October 17, 2022
-//Peer reviewed by:
+//This program takes the user's name and greets them
+//Peer reviewed by: Jeremy Lapham
 
 
 //Initializes the various variables in the main method of the program. 
