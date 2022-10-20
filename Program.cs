@@ -1,7 +1,7 @@
 ﻿//Griffin Parker
 //Mini Challenge 1 Remastered - Say Hello
 //October 17, 2022
-//This program takes the user's name and greets them
+//This program takes the user's name and greets them. It uses a method to animate a face to give the user a better experience. 
 //Peer reviewed by: Jeremy Lapham
 
 
